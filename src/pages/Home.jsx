@@ -1,15 +1,57 @@
 import React from "react";
 import Layout from '../components/Layout';
 
-function Home() {
-    return (
-        <div>
-            <Layout>
-                <h1>Home</h1>
-                <button className="btn btn-danger mx-5">X</button>
-            </Layout>
-        </div>
-    );
+import HomeCategory from '../components/HomeCategory';
+
+// IMPORT JSON 
+import products from '../utils/products.json';
+// console.log(products);
+
+class Home extends React.Component {
+
+    constructor() {
+        super();
+        this.state = {
+            categories: []
+        };
+    }
+
+    // imports data from json 
+    componentDidMount() {
+
+        const categories = Object.values(products)
+        // console.log(categories);
+
+        // this.setState({categories: categories})
+        this.setState({categories})
+    }
+
+    render() {
+         // console.log(this.state);
+        return (
+            <div>
+                <Layout>
+                    <div className="container text-center">
+                        <div className="row">
+                            {
+                                this.state.categories.map((category, index) => {
+                                    return (
+                                        <HomeCategory 
+                                            key={index}
+                                            image={category.image}
+                                            title={category.name}
+                                            description={category.description}
+                                        />
+                                    );
+                                })
+                            }
+                        </div>
+                    </div>
+                </Layout>
+            </div>
+        );
+
+    }
 }
 
 export default Home;

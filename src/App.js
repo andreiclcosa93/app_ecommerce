@@ -7,9 +7,10 @@ import Login from './pages/Login';
 import About from './pages/About';
 import Page404 from './pages/Page404';
 
+
 function App() {
   return (
-    <div>
+    <div>    
 
         <Routes>
           <Route exact path='/' element={ <Home/> } />

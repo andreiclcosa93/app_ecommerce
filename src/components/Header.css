@@ -1,0 +1,4 @@
+.header .logo { width: 40px;  }
+.header  span.logoName { color: aliceblue;  text-decoration: none !important; }
+.header .shopCart { width: 20px; margin-left: 20px; }
+.header .login { color: aliceblue; text-decoration: none; }

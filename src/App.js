@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import About from './pages/About';
 import Page404 from './pages/Page404';
+import Category from './pages/Category';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route exact path='/' element={ <Home/> } />
           <Route path='/login' element={ <Login/> } />
           <Route path='/about' element={ <About/> } />
+          <Route path='/category/:categoryName' element={ <Category/> } />
           <Route path='/*' element={ <Page404/> } />
         </Routes>
 
